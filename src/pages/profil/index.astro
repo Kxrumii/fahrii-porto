@@ -1,0 +1,307 @@
+---
+import '../../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+---
+
+<!DOCTYPE html>
+<html lang="id" id="html-root" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrii | Profil Diri</title>
+    <meta name="description" content="Halaman profil diri mahasiswa Teknik Informatika, Fahri Khairun Ariansyah (Kxrumii).">
+    
+    <meta property="og:title" content="Fahrii | Profil Diri">
+    <meta property="og:description" content="Halaman profil diri mahasiswa Teknik Informatika, Fahri Khairun Ariansyah.">
+    <meta property="og:image" content="https://kxrumii.my.id/foto-diri.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='50' text-anchor='middle' dominant-baseline='central' font-size='80' font-family='monospace' font-weight='bold' fill='%234c4f69'>1</text></svg>" />
+    <ClientRouter />
+</head>
+
+<body class="bg-[#eff1f5] text-[#4c4f69] dark:bg-[#1e1e2e] dark:text-[#cdd6f4] antialiased flex selection:bg-[#40a02b] selection:text-white dark:selection:bg-[#a6e3a1] transition-colors duration-500">
+
+    <header id="side-nav" class="fixed left-0 top-0 h-dvh w-12 hover:w-56 border-r border-[#ccd0da] dark:border-[#313244] bg-[#eff1f5]/90 dark:bg-[#1e1e2e]/90 backdrop-blur z-50 transition-all duration-500 overflow-hidden group flex flex-col py-8">
+        
+        <div class="absolute right-0 top-0 w-[2px] h-full bg-[#ccd0da] dark:bg-[#313244]">
+            <div id="progress-bar" class="w-full bg-[#40a02b] dark:bg-[#a6e3a1] h-0 transition-all duration-100 ease-out"></div>
+        </div>
+
+        <div class="px-4 w-56">
+            <a href="/" aria-label="Kembali ke Halaman Beranda" class="block font-black text-lg tracking-tighter hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors">F.</a>
+        </div>
+
+        <div class="flex-1 flex flex-col justify-center px-4 w-56">
+            <nav aria-label="Navigasi Utama" class="flex flex-col gap-8">
+                <a href="#perkenalan" aria-label="Lihat Perkenalan" class="flex items-center gap-4 hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors whitespace-nowrap">
+                    <span class="font-mono text-[10px] text-[#8c8fa1] dark:text-[#6c7086]">01</span>
+                    <span class="text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75">Perkenalan</span>
+                </a>
+                <a href="#profil" aria-label="Lihat Profil Diri" class="flex items-center gap-4 hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors whitespace-nowrap">
+                    <span class="font-mono text-[10px] text-[#8c8fa1] dark:text-[#6c7086]">02</span>
+                    <span class="text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Profil Diri</span>
+                </a>
+                <a href="#jadwal" aria-label="Lihat Jadwal Kuliah" class="flex items-center gap-4 hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors whitespace-nowrap">
+                    <span class="font-mono text-[10px] text-[#8c8fa1] dark:text-[#6c7086]">03</span>
+                    <span class="text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150">Jadwal Kuliah</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="px-4 w-56 mt-auto">
+            <button id="theme-toggle" aria-label="Ubah Tema" class="flex items-center gap-4 hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors cursor-pointer outline-none focus:outline-none focus:ring-2 focus:ring-[#40a02b] dark:focus:ring-[#a6e3a1] rounded">
+                <svg aria-hidden="true" class="w-5 h-5 flex-shrink-0 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <svg aria-hidden="true" class="w-5 h-5 flex-shrink-0 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="ml-12 w-full min-h-dvh flex flex-col overflow-hidden relative">
+
+        <div class="fixed right-10 top-10 font-mono text-xs text-[#ccd0da] dark:text-[#313244] pointer-events-none z-[-1]">+</div>
+        <div class="fixed left-20 bottom-10 font-mono text-xs text-[#ccd0da] dark:text-[#313244] pointer-events-none z-[-1]">+</div>
+
+        <section id="perkenalan" class="min-h-dvh flex items-center p-8 md:p-24 border-b border-[#ccd0da] dark:border-[#313244] relative overflow-hidden">
+            <div class="absolute -right-10 md:-right-20 top-20 text-[25vw] font-black text-[#ccd0da]/30 dark:text-[#313244]/30 select-none leading-none pointer-events-none">01</div>
+            
+            <div class="max-w-4xl fade-in-up z-10 relative border-l-2 border-[#40a02b] dark:border-[#a6e3a1] pl-6 md:pl-10">
+                <h3 class="text-[#40a02b] dark:text-[#a6e3a1] font-mono text-xs md:text-sm mb-4 tracking-widest uppercase">
+                    // Hello, World.
+                </h3>
+                <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-6">
+                    Salam Kenal,<br/>Aku Fahri.
+                </h1>
+                <p class="text-lg md:text-xl text-[#5c5f77] dark:text-[#bac2de] max-w-2xl leading-relaxed">
+                    Selamat datang di website profil diri sederhanaku. Ini adalah ruang buatku berekspresi, ngerjain tugas, sekaligus eksplorasi hal-hal baru di ranah pengembangan web.
+                </p>
+                <p class="font-mono text-[10px] text-[#8c8fa1] dark:text-[#6c7086] italic mt-6 select-none">
+                    "People can only save themselves. One person saving another is impossible."
+                </p>
+            </div>
+        </section>
+
+        <section id="profil" class="min-h-dvh flex items-center p-8 md:p-24 border-b border-[#ccd0da] dark:border-[#313244] bg-[#e6e9ef] dark:bg-[#181825] transition-colors duration-500 relative overflow-hidden">
+            <div class="absolute top-0 left-1/2 w-[1px] h-full bg-[#ccd0da] dark:bg-[#313244] pointer-events-none"></div>
+            <div class="absolute md: top-20 text-[25vw] font-black text-[#ccd0da]/30 dark:text-[#313244]/30 select-none leading-none pointer-events-none">02</div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center w-full max-w-6xl relative z-10">
+                <div class="fade-in-up bg-[#e6e9ef] dark:bg-[#181825] md:pr-10">
+                    <h2 class="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-2">FAHRI KHAIRUN<br/>ARIANSYAH.</h2>
+                    <p class="font-mono text-xs text-[#8c8fa1] dark:text-[#6c7086] mb-8">— TEKNIK INFORMATIKA, UIN SGD</p>
+                    
+                    <p class="text-[#4c4f69] dark:text-[#cdd6f4] leading-relaxed mb-4 text-justify md:text-left">
+                        Aku mahasiswa jurusan Teknik Informatika di UIN Sunan Gunung Djati Bandung. Selain nugas, aku suka banget ngoprek OS Linux (terutama ekosistem Arch dan Hyprland), bikin editan video/foto, sampai ngoding antarmuka web biar kelihatan minimalis dan enak dipandang.
+                    </p>
+                </div>
+                
+                <figure class="fade-in-up overflow-hidden bg-[#ccd0da] dark:bg-[#313244] aspect-square md:aspect-[4/5] shadow-2xl relative group border-4 border-white dark:border-[#11111b] rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <img src="/foto-diri.png" alt="Foto portrait Fahri Khairun Ariansyah mengenakan kemeja jurusan teknik informatika UIN Sunan Gunung Djati Bandung" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                    <figcaption class="absolute bottom-4 right-4 text-[10px] font-mono bg-black/50 text-white px-2 py-1 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        IMG_01.DAT
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="jadwal" class="min-h-dvh flex flex-col justify-center p-8 md:p-24 border-b border-[#ccd0da] dark:border-[#313244] relative overflow-hidden">
+            <div class="absolute -left-10 bottom-10 text-[20vw] font-black text-[#ccd0da]/30 dark:text-[#313244]/30 select-none leading-none pointer-events-none">03</div>
+
+            <div class="w-full max-w-6xl fade-in-up z-10">
+                <h2 class="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-8 md:mb-12 border-b-2 border-[#11111b] dark:border-[#cdd6f4] inline-block pb-2">
+                    Jadwal Semester 5
+                </h2>
+                
+                <div class="overflow-x-auto w-full pb-4">
+                    <table class="w-full text-left border-collapse min-w-[800px]">
+                        <thead>
+                            <tr class="border-b border-[#4c4f69] dark:border-[#cdd6f4] text-xs uppercase tracking-widest font-mono text-[#5c5f77] dark:text-[#bac2de]">
+                                <th scope="col" class="py-4 px-2">No</th>
+                                <th scope="col" class="py-4 px-2">Matakuliah</th>
+                                <th scope="col" class="py-4 px-2">Kelas</th>
+                                <th scope="col" class="py-4 px-2">SKS</th>
+                                <th scope="col" class="py-4 px-2">Ruang</th>
+                                <th scope="col" class="py-4 px-2">Waktu</th>
+                                <th scope="col" class="py-4 px-2">Dosen</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm" id="table-body">
+                            <tr class="row-anim opacity-0 translate-y-4 border-b border-[#ccd0da]/50 dark:border-[#313244]/50 hover:bg-[#e6e9ef] dark:hover:bg-[#181825] transition-colors">
+                                <td class="py-4 px-2 font-mono text-[#8c8fa1] dark:text-[#6c7086]">1</td>
+                                <td class="py-4 px-2 font-bold">Manajemen Basis Data</td>
+                                <td class="py-4 px-2">A</td>
+                                <td class="py-4 px-2">3</td>
+                                <td class="py-4 px-2">R.4.09</td>
+                                <td class="py-4 px-2 font-mono text-[#5c5f77] dark:text-[#bac2de]">Senin, 09:30 - 12:00</td>
+                                <td class="py-4 px-2">Wildan Budiawan Z. S.T., M.Kom.</td>
+                            </tr>
+                            <tr class="row-anim opacity-0 translate-y-4 border-b border-[#ccd0da]/50 dark:border-[#313244]/50 hover:bg-[#e6e9ef] dark:hover:bg-[#181825] transition-colors">
+                                <td class="py-4 px-2 font-mono text-[#8c8fa1] dark:text-[#6c7086]">2</td>
+                                <td class="py-4 px-2 font-bold">Manajemen Proyek Perangkat Lunak</td>
+                                <td class="py-4 px-2">A</td>
+                                <td class="py-4 px-2">3</td>
+                                <td class="py-4 px-2">R.4.01</td>
+                                <td class="py-4 px-2 font-mono text-[#5c5f77] dark:text-[#bac2de]">Senin, 07:00 - 09:30</td>
+                                <td class="py-4 px-2">Agung Wahana S.E., M.T.</td>
+                            </tr>
+                            <tr class="row-anim opacity-0 translate-y-4 border-b border-[#ccd0da]/50 dark:border-[#313244]/50 hover:bg-[#e6e9ef] dark:hover:bg-[#181825] transition-colors">
+                                <td class="py-4 px-2 font-mono text-[#8c8fa1] dark:text-[#6c7086]">3</td>
+                                <td class="py-4 px-2 font-bold">Intelegensia Buatan</td>
+                                <td class="py-4 px-2">A</td>
+                                <td class="py-4 px-2">3</td>
+                                <td class="py-4 px-2">R.4.10</td>
+                                <td class="py-4 px-2 font-mono text-[#5c5f77] dark:text-[#bac2de]">Selasa, 15:30 - 18:00</td>
+                                <td class="py-4 px-2">Jumadi ST., M.Cs.</td>
+                            </tr>
+                            <tr class="row-anim opacity-0 translate-y-4 border-b border-[#ccd0da]/50 dark:border-[#313244]/50 hover:bg-[#e6e9ef] dark:hover:bg-[#181825] transition-colors">
+                                <td class="py-4 px-2 font-mono text-[#8c8fa1] dark:text-[#6c7086]">4</td>
+                                <td class="py-4 px-2 font-bold">Sosio-Informatika & Profesionalisme</td>
+                                <td class="py-4 px-2">D</td>
+                                <td class="py-4 px-2">2</td>
+                                <td class="py-4 px-2">R.4.10</td>
+                                <td class="py-4 px-2 font-mono text-[#5c5f77] dark:text-[#bac2de]">Rabu, 12:40 - 14:20</td>
+                                <td class="py-4 px-2">Dr. Yana Aditia G. ST., M.Kom.</td>
+                            </tr>
+                            <tr class="row-anim opacity-0 translate-y-4 border-b border-[#ccd0da]/50 dark:border-[#313244]/50 hover:bg-[#e6e9ef] dark:hover:bg-[#181825] transition-colors">
+                                <td class="py-4 px-2 font-mono text-[#8c8fa1] dark:text-[#6c7086]">5</td>
+                                <td class="py-4 px-2 font-bold">Jaringan Komputer</td>
+                                <td class="py-4 px-2">A</td>
+                                <td class="py-4 px-2">3</td>
+                                <td class="py-4 px-2">R.4.11</td>
+                                <td class="py-4 px-2 font-mono text-[#5c5f77] dark:text-[#bac2de]">Rabu, 09:30 - 12:00</td>
+                                <td class="py-4 px-2">Cecep Nurul Alam M.T.</td>
+                            </tr>
+                            <tr class="row-anim opacity-0 translate-y-4 border-b border-[#ccd0da]/50 dark:border-[#313244]/50 hover:bg-[#e6e9ef] dark:hover:bg-[#181825] transition-colors">
+                                <td class="py-4 px-2 font-mono text-[#8c8fa1] dark:text-[#6c7086]">6</td>
+                                <td class="py-4 px-2 font-bold">Interaksi Manusia & Komputer</td>
+                                <td class="py-4 px-2">A</td>
+                                <td class="py-4 px-2">3</td>
+                                <td class="py-4 px-2">R.4.01</td>
+                                <td class="py-4 px-2 font-mono text-[#5c5f77] dark:text-[#bac2de]">Rabu, 07:00 - 09:30</td>
+                                <td class="py-4 px-2">Dr. Cepy Slamet S.T., M.Kom.</td>
+                            </tr>
+                            <tr class="row-anim opacity-0 translate-y-4 border-b border-[#ccd0da]/50 dark:border-[#313244]/50 hover:bg-[#e6e9ef] dark:hover:bg-[#181825] transition-colors">
+                                <td class="py-4 px-2 font-mono text-[#8c8fa1] dark:text-[#6c7086]">7</td>
+                                <td class="py-4 px-2 font-bold">Pengembangan Aplikasi Web</td>
+                                <td class="py-4 px-2">A</td>
+                                <td class="py-4 px-2">3</td>
+                                <td class="py-4 px-2">R.4.01</td>
+                                <td class="py-4 px-2 font-mono text-[#5c5f77] dark:text-[#bac2de]">Kamis, 15:30 - 18:00</td>
+                                <td class="py-4 px-2">Muhammad Deden Firdaus ST, M.Kom</td>
+                            </tr>
+                            <tr class="row-anim opacity-0 translate-y-4 border-b border-[#ccd0da]/50 dark:border-[#313244]/50 hover:bg-[#e6e9ef] dark:hover:bg-[#181825] transition-colors">
+                                <td class="py-4 px-2 font-mono text-[#8c8fa1] dark:text-[#6c7086]">8</td>
+                                <td class="py-4 px-2 font-bold">Pengembangan Aplikasi Mobile</td>
+                                <td class="py-4 px-2">A</td>
+                                <td class="py-4 px-2">3</td>
+                                <td class="py-4 px-2">R.4.01</td>
+                                <td class="py-4 px-2 font-mono text-[#5c5f77] dark:text-[#bac2de]">Kamis, 09:30 - 12:00</td>
+                                <td class="py-4 px-2">H. Aldy Rialdy Atmadja M.T</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact" class="bg-[#dce0e8] dark:bg-[#11111b] min-h-[30vh] p-8 md:p-24 flex flex-col justify-center transition-colors duration-500">
+            <div class="fade-in-up flex flex-col md:flex-row justify-between items-center md:items-end gap-8">
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl font-bold uppercase tracking-tighter mb-2">Socials.</h2>
+                    <p class="text-[#5c5f77] dark:text-[#bac2de] text-sm font-mono max-w-sm">
+                        Connect with me across the web.<br>Walau jarang aktif hehe.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="https://github.com/kxrumii" aria-label="Kunjungi GitHub Fahri Khairun Ariansyah" target="_blank" class="hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors group relative">
+                        <span class="sr-only">GitHub</span>
+                        <svg aria-hidden="true" class="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity">Kxrumii</span>
+                    </a>
+
+                    <a href="https://instagram.com/p_ftttt" aria-label="Kunjungi Instagram Fahri Khairun Ariansyah" target="_blank" class="hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors relative group">
+                        <span class="sr-only">Instagram</span>
+                        <svg aria-hidden="true" class="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                        <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity">p_ftttt</span>
+                    </a>
+
+                    <a href="https://tiktok.com/@p_ftttt" aria-label="Kunjungi TikTok Fahri Khairun Ariansyah" target="_blank" class="hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors relative group">
+                        <span class="sr-only">TikTok</span>
+                        <svg aria-hidden="true" class="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.12-.96 4.2-2.58 5.61-1.63 1.4-3.79 2.17-5.96 2.05-2.33-.08-4.59-1.15-6.09-2.92-1.46-1.73-2.12-4.05-1.78-6.28.32-2.19 1.58-4.2 3.38-5.32 1.73-1.07 3.86-1.41 5.82-1.07v4.06c-1.39-.21-2.88-.04-4.09.73-1.21.75-1.95 2.17-2.01 3.6-.07 1.57.73 3.12 2.07 4.02 1.35.9 3.12 1.09 4.63.48 1.48-.59 2.58-1.97 2.86-3.56.09-.5.1-1.02.1-1.53V.02z" /></svg>
+                        <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity">p_ftttt</span>
+                    </a>
+
+                    <a href="https://youtube.com/@Kxrumi1" aria-label="Kunjungi YouTube Fahri Khairun Ariansyah" target="_blank" class="hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors relative group">
+                        <span class="sr-only">YouTube</span>
+                        <svg aria-hidden="true" class="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M21.582 6.186a2.506 2.506 0 00-1.766-1.777C18.257 4 12 4 12 4s-6.257 0-7.816.409A2.506 2.506 0 002.418 6.186C2 7.77 2 12 2 12s0 4.23.418 5.814a2.506 2.506 0 001.766 1.777C5.743 20 12 20 12 20s6.257 0 7.816-.409a2.506 2.506 0 001.766-1.777C22 16.23 22 12 22 12s0-4.23-.418-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" clip-rule="evenodd" /></svg>
+                        <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity">Kxrumi1</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        document.addEventListener('astro:page-load', () => {
+            
+            const progressBar = document.getElementById('progress-bar');
+            window.addEventListener('scroll', () => {
+                const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+                if (scrollTotal > 0 && progressBar) { 
+                    progressBar.style.height = (window.scrollY / scrollTotal) * 100 + '%';
+                }
+            });
+
+            const themeBtn = document.getElementById('theme-toggle');
+            const htmlRoot = document.getElementById('html-root');
+            
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                if(htmlRoot) htmlRoot.classList.add('dark');
+            }
+
+            if(themeBtn) {
+                themeBtn.addEventListener('click', () => {
+                    if(htmlRoot) htmlRoot.classList.toggle('dark');
+                });
+            }
+
+            const fadeElements = document.querySelectorAll<HTMLElement>('.fade-in-up');
+            const rowElements = document.querySelectorAll<HTMLElement>('.row-anim');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(el => observer.observe(el));
+
+            const tableObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        rowElements.forEach((row, index) => {
+                            setTimeout(() => {
+                                row.classList.remove('opacity-0', 'translate-y-4');
+                                row.classList.add('opacity-100', 'translate-y-0');
+                                row.style.transition = 'all 0.5s ease-out';
+                            }, index * 100); 
+                        });
+                        tableObserver.disconnect(); 
+                    }
+                });
+            }, { threshold: 0.1 }); 
+            
+            const tableContainer = document.getElementById('table-body');
+            if(tableContainer) tableObserver.observe(tableContainer);
+
+        });
+    </script>
+</body>
+</html>
