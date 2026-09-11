@@ -17,6 +17,18 @@ import { ClientRouter } from 'astro:transitions';
     <meta property="og:type" content="website">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='50' text-anchor='middle' dominant-baseline='central' font-size='80' font-family='monospace' font-weight='bold' fill='%234c4f69'>1</text></svg>" />
     <ClientRouter />
+
+    <script is:inline>
+        function applyTheme() {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+        applyTheme();
+        document.addEventListener('astro:after-swap', applyTheme);
+    </script>
 </head>
 
 <body class="bg-[#eff1f5] text-[#4c4f69] dark:bg-[#1e1e2e] dark:text-[#cdd6f4] antialiased flex selection:bg-[#40a02b] selection:text-white dark:selection:bg-[#a6e3a1] transition-colors duration-500">
@@ -258,15 +270,16 @@ import { ClientRouter } from 'astro:transitions';
             });
 
             const themeBtn = document.getElementById('theme-toggle');
-            const htmlRoot = document.getElementById('html-root');
-            
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                if(htmlRoot) htmlRoot.classList.add('dark');
-            }
-
             if(themeBtn) {
                 themeBtn.addEventListener('click', () => {
-                    if(htmlRoot) htmlRoot.classList.toggle('dark');
+                    const isDark = document.documentElement.classList.contains('dark');
+                    if (isDark) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    }
                 });
             }
 
