@@ -39,35 +39,42 @@ import { ClientRouter } from 'astro:transitions';
             <div id="progress-bar" class="w-full bg-[#40a02b] dark:bg-[#a6e3a1] h-0 transition-all duration-100 ease-out"></div>
         </div>
 
-        <div class="px-4 w-56">
-            <a href="/" aria-label="Kembali ke Halaman Beranda" class="block font-black text-lg tracking-tighter hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors">F.</a>
-        </div>
+        <div class="flex flex-col h-full justify-between w-56">
+            <div class="w-12 flex justify-center flex-shrink-0">
+                <a href="/" aria-label="Kembali ke Halaman Beranda" class="block font-black text-lg tracking-tighter hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors focus:outline-none focus:ring-2 focus:ring-[#40a02b] rounded-md">F.</a>
+            </div>
 
-        <div class="flex-1 flex flex-col justify-center px-4 w-56">
             <nav aria-label="Navigasi Utama" class="flex flex-col gap-8">
-                <a href="#perkenalan" aria-label="Lihat Perkenalan" class="flex items-center gap-4 hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors whitespace-nowrap">
-                    <span class="font-mono text-[10px] text-[#8c8fa1] dark:text-[#6c7086]">01</span>
+                <a href="#perkenalan" aria-label="Lihat Perkenalan" class="flex items-center hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-[#40a02b] rounded-md group/item">
+                    <div class="w-12 flex justify-center flex-shrink-0">
+                        <span class="font-mono text-[10px] text-[#8c8fa1] dark:text-[#6c7086] pt-0.5 group-hover/item:text-[#40a02b] dark:group-hover/item:text-[#a6e3a1] transition-colors">01</span>
+                    </div>
                     <span class="text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75">Perkenalan</span>
                 </a>
-                <a href="#profil" aria-label="Lihat Profil Diri" class="flex items-center gap-4 hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors whitespace-nowrap">
-                    <span class="font-mono text-[10px] text-[#8c8fa1] dark:text-[#6c7086]">02</span>
+                <a href="#profil" aria-label="Lihat Profil Diri" class="flex items-center hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-[#40a02b] rounded-md group/item">
+                    <div class="w-12 flex justify-center flex-shrink-0">
+                        <span class="font-mono text-[10px] text-[#8c8fa1] dark:text-[#6c7086] pt-0.5 group-hover/item:text-[#40a02b] dark:group-hover/item:text-[#a6e3a1] transition-colors">02</span>
+                    </div>
                     <span class="text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Profil Diri</span>
                 </a>
-                <a href="#jadwal" aria-label="Lihat Jadwal Kuliah" class="flex items-center gap-4 hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors whitespace-nowrap">
-                    <span class="font-mono text-[10px] text-[#8c8fa1] dark:text-[#6c7086]">03</span>
+                <a href="#jadwal" aria-label="Lihat Jadwal Kuliah" class="flex items-center hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-[#40a02b] rounded-md group/item">
+                    <div class="w-12 flex justify-center flex-shrink-0">
+                        <span class="font-mono text-[10px] text-[#8c8fa1] dark:text-[#6c7086] pt-0.5 group-hover/item:text-[#40a02b] dark:group-hover/item:text-[#a6e3a1] transition-colors">03</span>
+                    </div>
                     <span class="text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150">Jadwal Kuliah</span>
                 </a>
             </nav>
-        </div>
 
-        <div class="px-4 w-56 mt-auto">
-            <button id="theme-toggle" aria-label="Ubah Tema" class="flex items-center gap-4 hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors cursor-pointer outline-none focus:outline-none focus:ring-2 focus:ring-[#40a02b] dark:focus:ring-[#a6e3a1] rounded">
-                <svg aria-hidden="true" class="w-5 h-5 flex-shrink-0 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-                <svg aria-hidden="true" class="w-5 h-5 flex-shrink-0 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
+            <button id="theme-toggle" aria-label="Ubah Tema" class="flex items-center hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors cursor-pointer outline-none focus:ring-2 focus:ring-[#40a02b] rounded-md group/item">
+                <div class="w-12 flex justify-center flex-shrink-0">
+                    <svg aria-hidden="true" class="w-5 h-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <svg aria-hidden="true" class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </div>
+                <span class="text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500">Ubah Tema</span>
             </button>
         </div>
     </header>
