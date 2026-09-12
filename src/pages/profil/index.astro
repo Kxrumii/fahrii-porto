@@ -65,16 +65,15 @@ import { ClientRouter } from 'astro:transitions';
                 </a>
             </nav>
 
-            <button id="theme-toggle" aria-label="Ubah Tema" class="flex items-center hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors cursor-pointer outline-none focus:ring-2 focus:ring-[#40a02b] rounded-md group/item">
+            <button id="theme-toggle" aria-label="Ubah Tema" class="flex items-center gap-4 hover:text-[#40a02b] dark:hover:text-[#a6e3a1] transition-colors cursor-pointer outline-none focus:outline-none focus:ring-2 focus:ring-[#40a02b] dark:focus:ring-[#a6e3a1] rounded">
                 <div class="w-12 flex justify-center flex-shrink-0">
-                    <svg aria-hidden="true" class="w-5 h-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                    <svg aria-hidden="true" class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg aria-hidden="true" class="w-5 h-5 flex-shrink-0 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
+                    <svg aria-hidden="true" class="w-5 h-5 flex-shrink-0 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
                 </div>
-                <span class="text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500">Ubah Tema</span>
             </button>
         </div>
     </header>
