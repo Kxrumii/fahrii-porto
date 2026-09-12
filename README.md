@@ -8,11 +8,10 @@ Repo ini pada dasarnya adalah tempatku nyimpen tugas mata kuliah **Pengembangan 
 
 * Astro
 * Tailwind CSS v4
-* Transisi Halaman Mulus (ClientRouter)
 
 **2. Halaman Tugas 01 - Profil Diri (`/profil`):**
 
-* 100% HTML5 Semantik
+* HTML5 Semantik
 * Tabel jadwal kuliah & Biodata singkat
 * Meta tag & OpenGraph
 * Dark / Light Mode
